@@ -174,6 +174,7 @@ class _SignIn extends State<SignIn> {
 
   }
   void validateEmail(String val) {
+    print('innn');
     if(val.isEmpty){
       setState(() {
         _errorMessage = "Email can not be empty";
