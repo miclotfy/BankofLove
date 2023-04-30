@@ -151,6 +151,14 @@ class _SignIn extends State<SignIn> {
                           child: Text('Sign In',style: TextStyle(fontSize: 20,color: Colors.white),),
                         ),
                       ),
+                      const SizedBox(height: 20,),
+                      Container(
+                        width: width,
+                        child: Center(
+                            child: Text(_errorMessage, style: TextStyle(color: Colors.red),),
+                          ),
+                        ),
+                      )
 
                     ],
                   ),
