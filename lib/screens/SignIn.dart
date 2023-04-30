@@ -1,3 +1,4 @@
+import 'package:bankoflove/screens/Signup.dart';
 import 'package:email_validator/email_validator.dart';
 
 import 'package:flutter/material.dart';
@@ -151,6 +152,33 @@ class _SignIn extends State<SignIn> {
                           child: Text('Sign In',style: TextStyle(fontSize: 20,color: Colors.white),),
                         ),
                       ),
+
+                      const SizedBox(height: 20,),
+
+
+
+                      GestureDetector(
+                          onTap: () {
+                            onTapTxtOrsignup(
+                                context);
+                          },
+
+                              child: Text(
+                                  "Or sign up",
+                                  overflow:
+                                  TextOverflow
+                                      .ellipsis,
+                                  textAlign:
+                                  TextAlign
+                                      .left,
+                                  style: TextStyle(color: Colors.red,fontSize: 20,
+
+                                  )
+                                      )),
+
+
+
+
                       const SizedBox(height: 20,),
                       Container(
                         width: width,
@@ -158,7 +186,7 @@ class _SignIn extends State<SignIn> {
                             child: Text(_errorMessage, style: TextStyle(color: Colors.red),),
                           ),
                         ),
-                      )
+
 
                     ],
                   ),
@@ -168,10 +196,13 @@ class _SignIn extends State<SignIn> {
           ],
         ),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
 
 
+  }
+
+  onTapTxtOrsignup(BuildContext context) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUp()));
   }
   void validateEmail(String val) {
     print('innn');
