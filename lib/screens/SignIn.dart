@@ -115,7 +115,7 @@ class _SignIn extends State<SignIn> {
                                       isPassword = true;
                                     });
                                   }
-                                  print(isPassword);
+
 
                                 }, icon:const Icon(Icons.remove_red_eye))
                               ],
