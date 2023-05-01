@@ -3,6 +3,7 @@ import 'package:bankoflove/screens/SignIn.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/custom_image_view.dart';
+import 'SignInPage.dart';
 
 class StScreen extends StatelessWidget {
   @override
@@ -29,10 +30,10 @@ class StScreen extends StatelessWidget {
                             padding: EdgeInsets.fromLTRB(0,0,42,0),
                             child: TextButton(
                               onPressed: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => const SignIn(),
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen(),
                                 ));
                               },
-                              child: Text('Skipp',style: TextStyle(fontSize: 20,color: Colors.red),),
+                              child: Text('Skip',style: TextStyle(fontSize: 20,color: Colors.red),),
                             )
                           ),
                         ),
