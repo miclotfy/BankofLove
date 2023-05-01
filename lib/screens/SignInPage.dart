@@ -18,18 +18,20 @@ class _SignInScreenState extends State<SignInScreen> {
   late String _password;
 
   Future<void> _signInWithEmailAndPassword() async {
-    try {
-      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-        email: _email,
-        password: _password,
-      );
-      // Sign in success, do something with userCredential
-    } on FirebaseAuthException catch (e) {
-      // Sign in failed, display error message
-      if (e.code == 'user-not-found') {
-        print('No user found for that email.');
-      } else if (e.code == 'wrong-password') {
-        print('Wrong password provided for that user.');
+    if (_formKey.currentState!.validate()) {
+      try {
+        UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+          email: _email,
+          password: _password,
+        );
+        // Sign in success, do something with userCredential
+      } on FirebaseAuthException catch (e) {
+        // Sign in failed, display error message
+        if (e.code == 'user-not-found') {
+          print('No user found for that email.');
+        } else if (e.code == 'wrong-password') {
+          print('Wrong password provided for that user.');
+        }
       }
     }
   }
